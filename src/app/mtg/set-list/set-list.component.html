@@ -1,0 +1,8 @@
+<ul>
+  <li *ngFor="let set of sets$ | async">
+    <a>
+      <img style="width:15px;height:15px" [src]="set.iconSvgUri"/>
+      {{set.name}}
+    </a>
+  </li>
+</ul>
