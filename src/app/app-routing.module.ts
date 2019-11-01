@@ -3,7 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 
 const routes: Routes = [
-  {path: '', redirectTo: '/mtg', pathMatch: 'full'},
+  {path: '', redirectTo: '/mtg/', pathMatch: 'full'},
   {path: 'mtg', loadChildren: () => import('./mtg/mtg.module').then(module => module.MtgModule)}
 ];
 
