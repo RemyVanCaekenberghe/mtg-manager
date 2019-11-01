@@ -1,1 +1,9 @@
 <p>{{set.code}}</p>
+<div>
+  <div *ngFor="let card of cards$ | async">
+    <span>
+      <img [src]="card.imageUris[0]"/>
+    </span>
+    <span>{{card.name}}</span>
+  </div>
+</div>
