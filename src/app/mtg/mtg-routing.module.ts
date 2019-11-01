@@ -5,7 +5,7 @@ import { SetListComponent } from './set-list/set-list.component';
 
 
 const routes: Routes = [
-  {path: '', component: SetComponent},
+  {path: ':code', component: SetComponent}
 ];
 
 @NgModule({

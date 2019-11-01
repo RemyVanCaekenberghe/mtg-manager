@@ -1,2 +1,2 @@
 <app-set-list (selected)="displaySelectedSet($event)"></app-set-list>
-<app-set-detail [set]="displayedSet"></app-set-detail>
+<app-set-detail *ngIf="displayedSet != null" [set]="displayedSet"></app-set-detail>
