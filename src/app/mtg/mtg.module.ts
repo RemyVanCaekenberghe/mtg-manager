@@ -4,11 +4,13 @@ import { MtgRoutingModule } from './mtg-routing.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SetListComponent } from './set-list/set-list.component';
+import { SetDetailComponent } from './set-detail/set-detail.component';
+import { SetComponent } from './set/set.component';
 
 
 
 @NgModule({
-  declarations: [SetListComponent],
+  declarations: [SetListComponent, SetDetailComponent, SetComponent],
   imports: [
     CommonModule, MtgRoutingModule
   ],

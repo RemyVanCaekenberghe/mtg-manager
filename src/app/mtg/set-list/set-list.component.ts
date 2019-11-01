@@ -1,5 +1,5 @@
 import { Set } from './../model/set';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Observable } from 'rxjs';
 import { SetService } from '../service/set.service';
 
@@ -10,6 +10,9 @@ import { SetService } from '../service/set.service';
 })
 export class SetListComponent implements OnInit {
 
+  @Output()
+  public selected = new EventEmitter<Set>();
+
   public sets$: Observable<Set[]>;
 
   constructor(private setService: SetService) { }
@@ -18,4 +21,9 @@ export class SetListComponent implements OnInit {
     this.sets$ = this.setService.getAll();
   }
 
+  public displaySet(set: Set, event: Event): void {
+    this.selected.emit(set);
+
+    event.preventDefault();
+  }
 }
