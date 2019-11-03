@@ -8,10 +8,11 @@ import { SetListComponent } from './set-list/set-list.component';
 import { SetDetailComponent } from './set-detail/set-detail.component';
 import { SetComponent } from './set/set.component';
 import { CardService } from './service/card.service';
+import { CardDetailComponent } from './card-detail/card-detail.component';
 
 
 @NgModule({
-  declarations: [SetListComponent, SetDetailComponent, SetComponent],
+  declarations: [SetListComponent, SetDetailComponent, SetComponent, CardDetailComponent],
   imports: [
     CommonModule, MtgRoutingModule
   ],

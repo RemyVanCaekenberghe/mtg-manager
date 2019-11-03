@@ -2,8 +2,9 @@
 <div>
   <div *ngFor="let card of cards$ | async">
     <span>
-      <img [src]="card.imageUris[0]"/>
+      <img [src]="card.imageUris[0]" (click)="displayDetail(card)"/>
     </span>
     <span>{{card.name}}</span>
   </div>
 </div>
+<app-card-detail *ngIf="detailedCard != null" [card]="detailedCard" ></app-card-detail>
