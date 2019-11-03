@@ -5,6 +5,7 @@ import { SetListComponent } from './set-list/set-list.component';
 
 
 const routes: Routes = [
+  {path: '', redirectTo: '/mtg/', pathMatch: 'full'},
   {path: ':code', component: SetComponent}
 ];
 
