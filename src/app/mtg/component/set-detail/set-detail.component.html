@@ -2,7 +2,7 @@
 <div>
   <div *ngFor="let card of cards$ | async">
     <span>
-      <img [src]="card.imageUris[0]" (click)="displayDetail(card)"/>
+      <img [src]="card.image_uris.normal" (click)="displayDetail(card)"/>
     </span>
     <span>{{card.name}}</span>
   </div>

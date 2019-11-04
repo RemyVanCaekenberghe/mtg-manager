@@ -5,6 +5,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SetListComponent, CardDetailComponent, SetComponent, SetDetailComponent } from './component';
 import { HttpClientModule } from '@angular/common/http';
+import { ScryfallCardService } from './service/card/scryfall-card.service';
 
 
 @NgModule({
@@ -14,7 +15,7 @@ import { HttpClientModule } from '@angular/common/http';
   ],
   providers: [
     {provide: SetService, useClass: ScryfallSetService},
-    {provide: CardService, useClass: MockCardService}
+    {provide: CardService, useClass: ScryfallCardService}
   ]
 })
 export class MtgModule { }

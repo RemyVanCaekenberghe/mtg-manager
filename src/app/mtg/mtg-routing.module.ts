@@ -4,7 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 
 
 const routes: Routes = [
-  {path: '', redirectTo: '/mtg/', pathMatch: 'full'},
+  {path: '', redirectTo: 'mtg/', pathMatch: 'full'},
   {path: ':code', component: SetComponent}
 ];
 

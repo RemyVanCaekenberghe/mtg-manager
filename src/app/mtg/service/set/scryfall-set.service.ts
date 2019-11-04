@@ -18,8 +18,6 @@ export class ScryfallSetService extends SetService {
 
   getAll(): Observable<Set[]> {
     return this.httpClient.get<List>(this.scryfallUrl)
-    .pipe(map(response => {
-      return response.data;
-    }), catchError(this.handleError));
+    .pipe(map((response: List) => response.data), catchError(this.handleError));
   }
 }
