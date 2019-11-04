@@ -1,7 +1,7 @@
 import { Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
-import { Set } from '../model/set';
-import { AbstractService } from './abstract.service';
+import { Set } from '../../model/set';
+import { AbstractService } from '../abstract.service';
 
 @Injectable({
   providedIn: 'root'

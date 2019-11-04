@@ -1,4 +1,4 @@
-import { Card } from './../model/card';
+import { Card } from '../../model/card';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 

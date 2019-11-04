@@ -1,7 +1,7 @@
-import { Set } from './../model/set';
+import { Set } from '../../model/set';
 import { Component, OnInit, Input, OnChanges, Output, EventEmitter } from '@angular/core';
-import { Card } from '../model/card';
-import { CardService } from '../service/card.service';
+import { Card } from '../../model/card';
+import { CardService } from '../../service';
 import { Observable } from 'rxjs';
 
 @Component({

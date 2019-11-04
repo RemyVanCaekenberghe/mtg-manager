@@ -1,7 +1,7 @@
-import { Set } from './../model/set';
+import { Set } from '../../model/set';
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Observable } from 'rxjs';
-import { SetService } from '../service/set.service';
+import { SetService } from '../../service/set/set.service';
 
 @Component({
   selector: 'app-set-list',

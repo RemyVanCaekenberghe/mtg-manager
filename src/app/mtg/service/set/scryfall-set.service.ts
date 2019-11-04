@@ -1,10 +1,10 @@
-import { Set } from './../model/set';
+import { Set } from '../../model/set';
 import { Injectable } from '@angular/core';
 import { SetService } from './set.service';
 import { Observable } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 import { HttpClient } from '@angular/common/http';
-import { List } from '../model/list';
+import { List } from '../../model/list';
 
 @Injectable({
   providedIn: 'root'

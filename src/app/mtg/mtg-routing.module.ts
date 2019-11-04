@@ -1,7 +1,6 @@
-import { SetComponent } from './set/set.component';
+import { SetComponent } from './component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { SetListComponent } from './set-list/set-list.component';
 
 
 const routes: Routes = [

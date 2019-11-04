@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Set } from '../model/set';
+import { Set } from '../../model/set';
 
 @Component({
   selector: 'app-set',
