@@ -7,9 +7,9 @@ export class Card {
     public name: string,
     public lang: string,
     public image_uris: Image,
-    manaCost: string,
+    public manaCost: string,
     public cmc: number,
-    colors: string[],
-    rarity: string
+    public colors: string[],
+    public rarity: string
   ) {}
 }

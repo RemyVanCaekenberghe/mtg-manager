@@ -3,6 +3,7 @@ import { Component, OnInit, Input, OnChanges, Output, EventEmitter } from '@angu
 import { Card } from '../../model/card';
 import { CardService } from '../../service';
 import { Observable } from 'rxjs';
+import { RouterLink, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-set-detail',
@@ -18,7 +19,7 @@ export class SetDetailComponent implements OnChanges {
 
   public detailedCard: Card;
 
-  constructor(private cardService: CardService) { }
+  constructor(private cardService: CardService, private routes: ActivatedRoute) { }
 
   ngOnChanges() {
     this.cards$ = this.cardService.getCardsBySet(this.set.code);
