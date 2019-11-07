@@ -1,3 +1,4 @@
+import { AppMaterialModule } from './../app-material/app-material.module';
 import { ScryfallSetService } from './service/set/scryfall-set.service';
 import { MockCardService, SetService, CardService } from './service';
 import { MtgRoutingModule } from './mtg-routing.module';
@@ -11,7 +12,7 @@ import { ScryfallCardService } from './service/card/scryfall-card.service';
 @NgModule({
   declarations: [SetListComponent, SetDetailComponent, SetComponent, CardDetailComponent],
   imports: [
-    CommonModule, MtgRoutingModule, HttpClientModule
+    CommonModule, MtgRoutingModule, HttpClientModule, AppMaterialModule
   ],
   providers: [
     {provide: SetService, useClass: ScryfallSetService},

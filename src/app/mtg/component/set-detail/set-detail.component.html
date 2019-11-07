@@ -1,6 +1,7 @@
 <p>{{set.code}}</p>
+<mat-spinner *ngIf="cards != null && cards.length == 0"></mat-spinner>
 <div>
-  <div *ngFor="let card of cards$ | async">
+  <div *ngFor="let card of cards">
     <span>
       <img [src]="card.image_uris.normal" (click)="displayDetail(card)"/>
     </span>

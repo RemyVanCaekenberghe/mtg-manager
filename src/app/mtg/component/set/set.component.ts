@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Set } from '../../model/set';
+import { SetService } from '../../service';
 
 @Component({
   selector: 'app-set',
@@ -9,10 +10,16 @@ import { Set } from '../../model/set';
 export class SetComponent implements OnInit {
 
   public displayedSet: Set;
+  public sets$: Set[];
 
-  constructor() { }
+  constructor(private setService: SetService) { }
 
   ngOnInit() {
+    this.setService.getAll().subscribe(
+      sets => {
+        this.sets$ = sets;
+      }
+    );
   }
 
   public displaySelectedSet(set: Set): void {

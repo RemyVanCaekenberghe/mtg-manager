@@ -1,2 +1,7 @@
-<app-set-list (selected)="displaySelectedSet($event)"></app-set-list>
-<app-set-detail *ngIf="displayedSet != null" [set]="displayedSet"></app-set-detail>
+<span>
+    <mat-spinner *ngIf="sets$ == null"></mat-spinner>
+  <app-set-list *ngIf="sets$ != null" [sets]="sets$" (selected)="displaySelectedSet($event)"></app-set-list>
+</span>
+<span>
+  <app-set-detail *ngIf="displayedSet != null" [set]="displayedSet"></app-set-detail>
+</span>

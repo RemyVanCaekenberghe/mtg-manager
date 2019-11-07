@@ -1,0 +1,8 @@
+* {
+  box-sizing: border-box;
+}
+
+app-set-list, ul {
+  width: 40%;
+  float: left;
+}

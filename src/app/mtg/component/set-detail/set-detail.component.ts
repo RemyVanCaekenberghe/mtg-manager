@@ -1,9 +1,13 @@
 import { Set } from '../../model/set';
-import { Component, OnInit, Input, OnChanges, Output, EventEmitter } from '@angular/core';
+import {
+  Component,
+  Input,
+  Output,
+  EventEmitter,
+  OnChanges
+} from '@angular/core';
 import { Card } from '../../model/card';
 import { CardService } from '../../service';
-import { Observable } from 'rxjs';
-import { RouterLink, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-set-detail',
@@ -14,18 +18,28 @@ export class SetDetailComponent implements OnChanges {
 
   @Input()
   public set: Set;
-
-  public cards$: Observable<Card[]>;
-
+  public cards: Card[];
   public detailedCard: Card;
 
-  constructor(private cardService: CardService, private routes: ActivatedRoute) { }
+  constructor(private cardService: CardService) {}
 
   ngOnChanges() {
-    this.cards$ = this.cardService.getCardsBySet(this.set.code);
+    if(this.set != null) {
+      this.emptyCards();
+
+      this.cardService.getCardsBySet(this.set.code).subscribe(cards => {
+        this.cards = cards;
+      });
+    }
   }
 
   public displayDetail(card: Card): void {
     this.detailedCard = card;
+  }
+
+  private emptyCards(): void {
+    if(this.cards != null) {
+      this.cards.splice(0, this.cards.length);
+    }
   }
 }

@@ -1,5 +1,7 @@
+<button mat-button>yop</button>
+
 <ul>
-  <li *ngFor="let set of sets$ | async">
+  <li *ngFor="let set of sets">
     <a [routerLink]="['/mtg/', set.code]" (click)="displaySet(set, $event)">
       <img style="width:15px;height:15px" [src]="set.iconSvgUri"/>
       {{set.name}}
