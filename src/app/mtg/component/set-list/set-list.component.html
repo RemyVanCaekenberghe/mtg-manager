@@ -1,10 +1,8 @@
-<button mat-button>yop</button>
-
-<ul>
-  <li *ngFor="let set of sets">
+<mat-list dense>
+  <mat-list-item *ngFor="let set of sets">
+    <img style="width:15px;height:15px" [src]="set.icon_svg_uri" />
     <a [routerLink]="['/mtg/', set.code]" (click)="displaySet(set, $event)">
-      <img style="width:15px;height:15px" [src]="set.iconSvgUri"/>
-      {{set.name}}
+      {{ set.name }}
     </a>
-  </li>
-</ul>
+  </mat-list-item>
+</mat-list>

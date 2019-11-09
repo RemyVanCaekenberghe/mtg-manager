@@ -2,7 +2,15 @@
   box-sizing: border-box;
 }
 
-app-set-list, ul {
-  width: 40%;
+app-set-list {
+  width: 20%;
   float: left;
+  height: 100vh;
+  position: fixed;
+  overflow-y: scroll;
+}
+
+app-set-detail {
+  width: 80%;
+  float: right;
 }

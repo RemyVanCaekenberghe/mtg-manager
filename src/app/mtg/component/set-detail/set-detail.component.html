@@ -1,11 +1,13 @@
 <p>{{set.code}}</p>
-<mat-spinner *ngIf="cards != null && cards.length == 0"></mat-spinner>
 <div>
-  <div *ngFor="let card of cards">
-    <span>
-      <img [src]="card.image_uris.normal" (click)="displayDetail(card)"/>
-    </span>
-    <span>{{card.name}}</span>
-  </div>
+  <mat-spinner *ngIf="cards != null && cards.length == 0"></mat-spinner>
 </div>
+<mat-grid-list cols="8" >
+  <mat-grid-tile rowspan="2" *ngFor="let card of cards">
+    <div>
+      <img [src]="card.image_uris.small" (click)="displayDetail(card)"/>
+      <div>{{card.name}}</div>
+    </div>
+  </mat-grid-tile>
+</mat-grid-list>
 <app-card-detail *ngIf="detailedCard != null" [card]="detailedCard" ></app-card-detail>
