@@ -17,6 +17,9 @@ import { ScryfallCardService } from './service/card/scryfall-card.service';
   providers: [
     {provide: SetService, useClass: ScryfallSetService},
     {provide: CardService, useClass: ScryfallCardService}
+  ],
+  entryComponents: [
+    CardDetailComponent
   ]
 })
 export class MtgModule { }

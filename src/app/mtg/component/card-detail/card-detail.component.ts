@@ -1,5 +1,6 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Inject } from '@angular/core';
 import { Card } from '../../model/card';
+import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-card-detail',
@@ -8,12 +9,13 @@ import { Card } from '../../model/card';
 })
 export class CardDetailComponent implements OnInit {
 
-  @Input()
-  public card: Card;
-
-  constructor() { }
+  constructor(public dialogRef: MatDialogRef<CardDetailComponent>, @Inject(MAT_DIALOG_DATA) public card: Card) { }
 
   ngOnInit() {
+  }
+
+  onCLick(): void {
+    this.dialogRef.close();
   }
 
 }
