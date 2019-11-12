@@ -1,6 +1,5 @@
-<p>{{set.code}}</p>
 <div>
-  <mat-spinner *ngIf="cards != null && cards.length == 0"></mat-spinner>
+  <mat-spinner *ngIf="cards == null || cards.length == 0"></mat-spinner>
 </div>
 <mat-grid-list cols="8" >
   <mat-grid-tile rowspan="2" *ngFor="let card of cards">
