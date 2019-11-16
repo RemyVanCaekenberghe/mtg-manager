@@ -5,12 +5,14 @@
 app-set-list {
   width: 20%;
   float: left;
-  height: 100vh;
+  height: 100%;
   position: fixed;
   overflow-y: scroll;
 }
 
 app-set-detail {
   width: 80%;
+  height: 100%;
   float: right;
+  overflow-y: scroll;
 }
