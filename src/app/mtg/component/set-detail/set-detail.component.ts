@@ -36,7 +36,8 @@ export class SetDetailComponent implements OnChanges {
 
   public displayDetail(card: Card): void {
     this.dialog.open(CardDetailComponent, {
-      data: card
+      data: card,
+      panelClass: 'card-detail-dialog'
     });
   }
 

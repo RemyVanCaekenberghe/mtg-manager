@@ -1,4 +1,11 @@
-<h1 mat-dialog-title>{{card.name}}</h1>
+<h1 mat-dialog-title class="card-title">{{card.name}}</h1>
 <div mat-dialog-content>
-  <img [src]="card.image_uris.normal"/>
+  <span class="card-image">
+    <img [src]="card.image_uris.normal"/>
+  </span>
+  <span class="card-detail">
+    <p>{{card.name}} {{card.mana_cost}}</p>
+    <p>{{card.type_line}}</p>
+    <p>{{card.oracle_text}}</p>
+  </span>
 </div>

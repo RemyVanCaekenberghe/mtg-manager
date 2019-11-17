@@ -3,9 +3,11 @@
 </div>
 <mat-grid-list cols="8" >
   <mat-grid-tile rowspan="2" *ngFor="let card of cards">
-    <div>
-      <img [src]="card.image_uris.small" (click)="displayDetail(card)"/>
-      <div>{{card.name}}</div>
+    <div (click)="displayDetail(card)">
+      <img [src]="card.image_uris.small"/>
+      <div class="card-title">
+        <p>{{card.name}}</p>
+      </div>
     </div>
   </mat-grid-tile>
 </mat-grid-list>

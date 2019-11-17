@@ -14,6 +14,8 @@ export class MockCardService extends CardService {
         'fb6b12e7-bb93-4eb6-bad1-b256a6ccff4e',
         'Acclaimed Contender',
         'en',
+        "mock",
+        "mock",
         new Image(
           'https://img.scryfall.com/cards/normal/front/f/b/fb6b12e7-bb93-4eb6-bad1-b256a6ccff4e.jpg?1572489601',
           'https://img.scryfall.com/cards/normal/front/f/b/fb6b12e7-bb93-4eb6-bad1-b256a6ccff4e.jpg?1572489601',
@@ -35,6 +37,8 @@ export class MockCardService extends CardService {
         'fb6b12e7-bb93-4eb6-bad1-b256a6ccff4e',
         'Acclaimed Contender',
         'en',
+        "mock",
+        "mock",
         new Image(
           'https://img.scryfall.com/cards/normal/front/f/b/fb6b12e7-bb93-4eb6-bad1-b256a6ccff4e.jpg?1572489601',
           'https://img.scryfall.com/cards/normal/front/f/b/fb6b12e7-bb93-4eb6-bad1-b256a6ccff4e.jpg?1572489601',
@@ -52,6 +56,8 @@ export class MockCardService extends CardService {
         'fb6b12e7-bb93-4eb6-bad1-b256a6ccff4e',
         'Acclaimed Contender copy',
         'en',
+        "mock",
+        "mock",
         new Image(
           'https://img.scryfall.com/cards/normal/front/f/b/fb6b12e7-bb93-4eb6-bad1-b256a6ccff4e.jpg?1572489601',
           'https://img.scryfall.com/cards/normal/front/f/b/fb6b12e7-bb93-4eb6-bad1-b256a6ccff4e.jpg?1572489601',

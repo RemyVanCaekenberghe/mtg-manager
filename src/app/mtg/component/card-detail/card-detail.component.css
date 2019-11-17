@@ -1,0 +1,10 @@
+.card-detail {
+  float: right;
+  width: 30%;
+  padding: 0 5%;
+}
+
+.card-image img {
+  width: 60%;
+  float: left;
+}

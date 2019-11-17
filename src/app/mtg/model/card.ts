@@ -5,9 +5,11 @@ export class Card {
   constructor(
     public id: string,
     public name: string,
+    public type_line: string,
+    public oracle_text: string,
     public lang: string,
     public image_uris: Image,
-    public manaCost: string,
+    public mana_cost: string,
     public cmc: number,
     public colors: string[],
     public rarity: string
