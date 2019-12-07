@@ -1,5 +1,12 @@
 <mat-list dense>
-  <mat-list-item *ngFor="let set of sets">
+  <div>
+      <form [formGroup]="form">
+          <mat-form-field>
+            <input matInput formControlName="setName" (keyup)="onFiltering()"/>
+          </mat-form-field>
+        </form>
+  </div>
+  <mat-list-item *ngFor="let set of filteredSets">
     <img style="width:15px;height:15px" [src]="set.icon_svg_uri" />
     <a [routerLink]="['/mtg/', set.code]" (click)="displaySet(set, $event)">
       {{ set.name }}

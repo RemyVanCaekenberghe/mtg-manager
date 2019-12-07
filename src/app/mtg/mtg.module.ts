@@ -7,12 +7,13 @@ import { CommonModule } from '@angular/common';
 import { SetListComponent, CardDetailComponent, SetComponent, SetDetailComponent } from './component';
 import { HttpClientModule } from '@angular/common/http';
 import { ScryfallCardService } from './service/card/scryfall-card.service';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
   declarations: [SetListComponent, SetDetailComponent, SetComponent, CardDetailComponent],
   imports: [
-    CommonModule, MtgRoutingModule, HttpClientModule, AppMaterialModule
+    CommonModule, MtgRoutingModule, HttpClientModule, AppMaterialModule, ReactiveFormsModule
   ],
   providers: [
     {provide: SetService, useClass: ScryfallSetService},
