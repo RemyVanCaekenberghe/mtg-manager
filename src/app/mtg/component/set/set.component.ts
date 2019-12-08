@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Set } from '../../model/set';
 import { SetService } from '../../service';
+import { SymbolService } from '../../service/symbol/symbol.service';
 
 @Component({
   selector: 'app-set',
@@ -12,7 +13,7 @@ export class SetComponent implements OnInit {
   public displayedSet: Set;
   public sets$: Set[];
 
-  constructor(private setService: SetService) { }
+  constructor(private setService: SetService, private symbolService: SymbolService) { }
 
   ngOnInit() {
     this.setService.getAll().subscribe(
@@ -20,6 +21,8 @@ export class SetComponent implements OnInit {
         this.sets$ = sets;
       }
     );
+
+    this.symbolService.loadSymbols();
   }
 
   public displaySelectedSet(set: Set): void {

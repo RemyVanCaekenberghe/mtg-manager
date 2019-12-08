@@ -19,11 +19,18 @@ export class ScryfallCardService extends CardService {
 
   getCard(id: string): Observable<Card> {
     return this.httpClient.get<Card>(this.scryfallUrl + `/${id}`)
-      .pipe(catchError(this.handleError));
+      .pipe(map(response => new Card(response)), catchError(this.handleError));
   }
 
   getCardsBySet(code: string): Observable<Card[]> {
-    return this.httpClient.get<List>(this.scryfallUrl + '/search?order=set&q=e%3A' + code)
-      .pipe(map((response: List) => response.data), catchError(this.handleError));
+    return this.httpClient.get<List<Card>>(this.scryfallUrl + '/search?order=set&q=e%3A' + code)
+      .pipe(map((response: List<Card>) => {
+        const cards = new Array<Card>();
+        for(const card of response.data) {
+          cards.push(new Card(card));
+        }
+
+        return cards;
+      }), catchError(this.handleError));
   }
 }

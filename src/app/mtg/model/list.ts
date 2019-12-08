@@ -1,6 +1,6 @@
 import { Set } from './set';
 
-export class List {
+export class List<T> {
 
-  constructor(public data: Set[]) {}
+  constructor(public data: Array<T>) {}
 }

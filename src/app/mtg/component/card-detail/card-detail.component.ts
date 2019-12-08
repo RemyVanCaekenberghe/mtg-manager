@@ -7,15 +7,11 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
   templateUrl: './card-detail.component.html',
   styleUrls: ['./card-detail.component.css']
 })
-export class CardDetailComponent implements OnInit {
+export class CardDetailComponent {
 
   constructor(public dialogRef: MatDialogRef<CardDetailComponent>, @Inject(MAT_DIALOG_DATA) public card: Card) { }
-
-  ngOnInit() {
-  }
 
   onCLick(): void {
     this.dialogRef.close();
   }
-
 }

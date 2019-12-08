@@ -4,7 +4,17 @@
     <img [src]="card.image_uris.normal"/>
   </span>
   <span class="card-detail">
-    <p>{{card.name}} {{card.mana_cost}}</p>
+    <p>
+      <span>{{card.name}}</span>
+      <span *ngFor="let cost of card.getManaCosts()">
+        <ng-container *ngIf="cost != ' // '; else elseTemplate">
+          <img [src]="cost | manaCost" style="width: 8%;"/>
+        </ng-container>
+        <ng-template #elseTemplate>
+          <span>//</span>
+        </ng-template>
+      </span>
+    </p>
     <p>{{card.type_line}}</p>
     <p>{{card.oracle_text}}</p>
   </span>

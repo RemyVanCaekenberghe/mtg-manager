@@ -17,7 +17,7 @@ export class ScryfallSetService extends SetService {
   }
 
   getAll(): Observable<Set[]> {
-    return this.httpClient.get<List>(this.scryfallUrl)
-    .pipe(map((response: List) => response.data), catchError(this.handleError));
+    return this.httpClient.get<List<Set>>(this.scryfallUrl)
+    .pipe(map((response: List<Set>) => response.data), catchError(this.handleError));
   }
 }

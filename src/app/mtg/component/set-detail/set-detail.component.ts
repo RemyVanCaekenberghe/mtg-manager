@@ -28,7 +28,7 @@ export class SetDetailComponent implements OnChanges {
     if (this.set != null) {
       this.emptyCards();
 
-      this.cardService.getCardsBySet(this.set.code).subscribe(cards => {
+      this.cardService.getCardsBySet(this.set.code).subscribe((cards: Card[]) => {
         this.cards = cards;
       });
     }
