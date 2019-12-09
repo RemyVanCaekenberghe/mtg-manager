@@ -1,9 +1,9 @@
 import { ScryfallSymbolService } from './service/symbol/scryfall-symbol.service';
 import { AppMaterialModule } from './../app-material/app-material.module';
 import { ScryfallSetService } from './service/set/scryfall-set.service';
-import { MockCardService, SetService, CardService } from './service';
+import { SetService, CardService } from './service';
 import { MtgRoutingModule } from './mtg-routing.module';
-import { NgModule, APP_INITIALIZER } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SetListComponent, CardDetailComponent, SetComponent, SetDetailComponent } from './component';
 import { HttpClientModule } from '@angular/common/http';
