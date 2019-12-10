@@ -4,14 +4,14 @@ import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AppMaterialModule } from '../app-material/app-material.module';
 import { SetService, CardService, ScryfallSetService, ScryfallSymbolService, ScryfallCardService, SymbolService } from './service';
-import { SetListComponent, CardDetailComponent, SetComponent, SetDetailComponent } from './component';
-import { ManaCostPipe } from './pipe';
+import { SetListComponent, CardDetailComponent, SetComponent, SetDetailComponent, CardDescriptionComponent } from './component';
+import { SymbolPipe } from './pipe';
 import { MtgRoutingModule } from './mtg-routing.module';
 
 
 
 @NgModule({
-  declarations: [SetListComponent, SetDetailComponent, SetComponent, CardDetailComponent, ManaCostPipe],
+  declarations: [SetListComponent, SetDetailComponent, SetComponent, CardDetailComponent, SymbolPipe, CardDescriptionComponent],
   imports: [
     CommonModule, MtgRoutingModule, HttpClientModule, AppMaterialModule, ReactiveFormsModule
   ],

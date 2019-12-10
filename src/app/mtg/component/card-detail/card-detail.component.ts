@@ -14,4 +14,8 @@ export class CardDetailComponent {
   onCLick(): void {
     this.dialogRef.close();
   }
+
+  public getCardSymbolIdentification(): RegExp {
+    return Card.SYMBOL_IDENTIFIER;
+  }
 }

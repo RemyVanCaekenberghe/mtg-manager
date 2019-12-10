@@ -2,13 +2,13 @@ import { Pipe, PipeTransform } from '@angular/core';
 import { SymbolService } from '../service/symbol/symbol.service';
 
 @Pipe({
-  name: 'manaCost'
+  name: 'symbol'
 })
-export class ManaCostPipe implements PipeTransform {
+export class SymbolPipe implements PipeTransform {
 
   constructor(private symbolService: SymbolService) {}
 
-  transform(cost: string): string {
-    return this.symbolService.getSymbol(cost);
+  transform(symbol: string): string {
+    return this.symbolService.getSymbol(symbol);
   }
 }
