@@ -1,4 +1,5 @@
-import { Component, OnInit, Input, Inject } from '@angular/core';
+import { Legality } from './../../model/legality';
+import { Component, OnInit, Input, Inject, AfterViewInit } from '@angular/core';
 import { Card } from '../../model/card';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
@@ -9,6 +10,8 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 })
 export class CardDetailComponent {
 
+  public formats: Array<string>;
+
   constructor(public dialogRef: MatDialogRef<CardDetailComponent>, @Inject(MAT_DIALOG_DATA) public card: Card) { }
 
   onCLick(): void {
@@ -18,4 +21,6 @@ export class CardDetailComponent {
   public getCardSymbolIdentification(): RegExp {
     return Card.SYMBOL_IDENTIFIER;
   }
+
+
 }

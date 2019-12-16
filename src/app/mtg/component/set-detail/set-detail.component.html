@@ -4,7 +4,12 @@
 <mat-grid-list cols="8" >
   <mat-grid-tile rowspan="2" *ngFor="let card of cards">
     <div (click)="displayDetail(card)">
-      <img [src]="card.imageUris.small"/>
+      <ng-container *ngIf="card.imageUris != null; else facesTemplate">
+        <img [src]="card.imageUris.small"/>
+      </ng-container>
+      <ng-template #facesTemplate>
+        <img [src]="card.cardFaces[0].imageUris.small"/>
+      </ng-template>
       <div class="card-title">
         <p>{{card.name}}</p>
       </div>

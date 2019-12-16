@@ -1,5 +1,7 @@
 import { Image } from "./image";
 import { Legality } from "./legality";
+import { Price } from './price';
+import { PurchaseUri } from './purchaseUri';
 export class Card {
   public static SYMBOL_IDENTIFIER = /(\{[^\}]+\})/g;
 
@@ -14,7 +16,10 @@ export class Card {
   public cmc: number;
   public colors: string[];
   public rarity: string;
-  public legalities: Map<string, boolean>;
+  public legalities: Legality;
+  public prices: Price;
+  public purchaseUris: PurchaseUri;
+  public artist: string;
 
   constructor(obj?: any) {
     this.id = obj.id;
@@ -22,11 +27,15 @@ export class Card {
     this.typeLine = obj.type_line;
     this.oracleText = obj.oracle_text;
     this.lang = obj.lang;
+    this.manaCost = obj.mana_cost;
+    this.cmc = obj.cmc;
+    this.colors = obj.colors;
+    this.rarity = obj.rarity;
+    this.artist = obj.artist;
 
     if (obj.image_uris != null) {
       this.imageUris = new Image(obj.image_uris);
     }
-    this.manaCost = obj.mana_cost;
 
     if (obj.card_faces != null) {
       this.cardFaces = new Array();
@@ -35,11 +44,16 @@ export class Card {
       }
     }
 
-    this.cmc = obj.cmc;
-    this.colors = obj.colors;
-    this.rarity = obj.rarity;
+    if (obj.prices != null) {
+      this.prices = new Price(obj.prices);
+    }
+    if (obj.purchase_uris != null) {
+      this.purchaseUris = new PurchaseUri(obj.purchase_uris);
+    }
 
-    this.setLegalities(obj.legalities);
+    if(obj.legalities != null) {
+      this.legalities = new Legality(obj.legalities);
+    }
   }
 
   public getManaCosts(): string[] {
@@ -48,26 +62,5 @@ export class Card {
 
   public getOracleTextDivided(): Array<string> {
     return this.oracleText.split(Card.SYMBOL_IDENTIFIER);
-  }
-
-  public getCardFaces(): Array<Card> {
-    const faces = new Array<Card>();
-    for (const face of this.cardFaces) {
-      faces.push(new Card(face));
-    }
-
-    return faces;
-  }
-
-  private setLegalities(legalities?: any) {
-    if (legalities != null) {
-      this.legalities = new Map();
-      this.legalities.set('standard', legalities.standard === Legality.LEGAL);
-      this.legalities.set('pioneer', legalities.pioneer === Legality.LEGAL);
-      this.legalities.set('modern', legalities.modern === Legality.LEGAL);
-      this.legalities.set('legacy', legalities.legacy === Legality.LEGAL);
-      this.legalities.set('commander', legalities.commander === Legality.LEGAL);
-      this.legalities.set('brawl', legalities.brawl === Legality.LEGAL);
-    }
   }
 }

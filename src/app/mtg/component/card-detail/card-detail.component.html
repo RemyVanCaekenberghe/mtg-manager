@@ -1,21 +1,58 @@
 <h1 mat-dialog-title class="card-title">{{ card.name }}</h1>
 <div mat-dialog-content>
   <span class="card-image">
-    <img [src]="card.imageUris.normal" />
+    <ng-container *ngIf="card.imageUris != null; else facesImageTemplate">
+      <img [src]="card.imageUris.normal"/>
+    </ng-container>
+    <ng-template #facesImageTemplate>
+      <img [src]="card.cardFaces[0].imageUris.normal"/>
+    </ng-template>
   </span>
   <span class="card-detail">
     <ng-container *ngIf="card.cardFaces == null; else facesTemplate">
       <app-card-description [card]="card"></app-card-description>
     </ng-container>
     <ng-template #facesTemplate>
-      <div *ngFor="let face of card.getCardFaces()">
+      <div *ngFor="let face of card.cardFaces">
         <app-card-description [card]="face"></app-card-description>
       </div>
     </ng-template>
-    <div *ngFor="let format of card.legalities.keys()">
+    <div>
       <div>
-        <span>{{format}} - {{card.legalities.get(format) ? 'Legal' : 'Not legal'}}</span>
+        Standard: {{card.legalities.standard}}
       </div>
+      <div>
+        Pioneer: {{card.legalities.pioneer}}
+      </div>
+      <div>
+        Modern: {{card.legalities.modern}}
+      </div>
+      <div>
+        Legacy: {{card.legalities.legacy}}
+      </div>
+      <div>
+        Commander: {{card.legalities.commander}}
+      </div>
+      <div>
+        Brawl: {{card.legalities.brawl}}
+      </div>
+    </div>
+    <div>
+      <div>
+        Prices:
+      </div>
+      <div>
+        Cardmarket: <a [href]="card.purchaseUris.cardmarket" target="_blank">{{card.prices.euro}}€</a>
+      </div>
+      <div>
+        TcgPlayer: <a [href]="card.purchaseUris.tcgPlayer" target="_blank">{{card.prices.usd}}$</a>
+      </div>
+      <div>
+        Cardhoarder: <a [href]="card.purchaseUris.cardhoarder" target="_blank">{{card.prices.tix}} tix</a>
+      </div>
+    </div>
+    <div>
+      <span>Artist: {{card.artist}}</span>
     </div>
   </span>
 </div>
