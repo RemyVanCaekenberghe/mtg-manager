@@ -7,7 +7,7 @@
         </form>
   </div>
   <mat-list-item *ngFor="let set of filteredSets">
-    <img style="width:15px;height:15px" [src]="set.icon_svg_uri" />
+    <img style="width:15px;height:15px" [src]="set.iconSvgUri" />
     <a [routerLink]="['/mtg/', set.code]" (click)="displaySet(set, $event)">
       {{ set.name }}
     </a>

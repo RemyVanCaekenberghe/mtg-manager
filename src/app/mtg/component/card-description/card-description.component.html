@@ -5,7 +5,7 @@
       <img class="symbol" [src]="manaCost | symbol" />
     </span>
   </p>
-  <p>{{ card.type_line }}</p>
+  <p>{{ card.typeLine }}</p>
   <span *ngFor="let text of card.getOracleTextDivided()">
     <ng-container
       *ngIf="!text.match(getCardSymbolIdentification()); else symbolTemplate"

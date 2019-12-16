@@ -26,7 +26,7 @@ export class ScryfallCardService extends CardService {
     return this.httpClient.get<List<Card>>(this.scryfallUrl + '/search?order=set&q=e%3A' + code)
       .pipe(map((response: List<Card>) => {
         const cards = new Array<Card>();
-        for(const card of response.data) {
+        for (const card of response.data) {
           cards.push(new Card(card));
         }
 

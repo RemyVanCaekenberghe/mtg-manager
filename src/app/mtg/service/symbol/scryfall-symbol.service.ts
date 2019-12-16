@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { SymbolService } from './symbol.service';
 import { HttpClient } from '@angular/common/http';
 import { catchError, map } from 'rxjs/operators';
-import { Observable } from 'rxjs';
+import { List } from '../../model/list';
 
 @Injectable({
   providedIn: 'root'
@@ -20,9 +20,9 @@ export class ScryfallSymbolService extends SymbolService {
   }
 
   loadSymbols() {
-    return new Promise((resolve, reject) => {
+    return new Promise(() => {
       this.httpClient
-        .get<any>(this.scryfallUrl)
+        .get<List<any>>(this.scryfallUrl)
         .pipe(
           map(response => {
             const symbolsUrls = new Map<string, string>();

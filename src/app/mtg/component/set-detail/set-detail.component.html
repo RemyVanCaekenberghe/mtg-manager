@@ -4,7 +4,7 @@
 <mat-grid-list cols="8" >
   <mat-grid-tile rowspan="2" *ngFor="let card of cards">
     <div (click)="displayDetail(card)">
-      <img [src]="card.image_uris.small"/>
+      <img [src]="card.imageUris.small"/>
       <div class="card-title">
         <p>{{card.name}}</p>
       </div>
