@@ -12,10 +12,10 @@
         <app-card-description [card]="face"></app-card-description>
       </div>
     </ng-template>
-    <!-- <div *ngFor="let legality of card.legalities">
+    <div *ngFor="let format of card.legalities.keys()">
       <div>
-        <span>{{legality}</span>
+        <span>{{format}} - {{card.legalities.get(format) ? 'Legal' : 'Not legal'}}</span>
       </div>
-    </div> -->
+    </div>
   </span>
 </div>

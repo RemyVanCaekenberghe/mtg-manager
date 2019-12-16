@@ -14,7 +14,7 @@ export class Card {
   public cmc: number;
   public colors: string[];
   public rarity: string;
-  public legalities: Map<string, Legality>;
+  public legalities: Map<string, boolean>;
 
   constructor(obj?: any) {
     this.id = obj.id;
@@ -22,6 +22,7 @@ export class Card {
     this.typeLine = obj.type_line;
     this.oracleText = obj.oracle_text;
     this.lang = obj.lang;
+
     if (obj.image_uris != null) {
       this.imageUris = new Image(obj.image_uris);
     }
@@ -37,6 +38,8 @@ export class Card {
     this.cmc = obj.cmc;
     this.colors = obj.colors;
     this.rarity = obj.rarity;
+
+    this.setLegalities(obj.legalities);
   }
 
   public getManaCosts(): string[] {
@@ -54,5 +57,17 @@ export class Card {
     }
 
     return faces;
+  }
+
+  private setLegalities(legalities?: any) {
+    if (legalities != null) {
+      this.legalities = new Map();
+      this.legalities.set('standard', legalities.standard === Legality.LEGAL);
+      this.legalities.set('pioneer', legalities.pioneer === Legality.LEGAL);
+      this.legalities.set('modern', legalities.modern === Legality.LEGAL);
+      this.legalities.set('legacy', legalities.legacy === Legality.LEGAL);
+      this.legalities.set('commander', legalities.commander === Legality.LEGAL);
+      this.legalities.set('brawl', legalities.brawl === Legality.LEGAL);
+    }
   }
 }
