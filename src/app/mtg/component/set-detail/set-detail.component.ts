@@ -5,7 +5,8 @@ import {
   Input,
   Output,
   EventEmitter,
-  OnChanges
+  OnChanges,
+  OnInit
 } from '@angular/core';
 import { Card } from '../../model/card';
 import { CardService } from '../../service';
@@ -29,7 +30,7 @@ export class SetDetailComponent implements OnChanges, OnInit {
 
   constructor(private cardService: CardService, public dialog: MatDialog) {}
 
-  neOnInit() {
+  ngOnInit() {
     this.currentPage = 0;
     this.nextPage = 0;
     this.previousPage = 0;
