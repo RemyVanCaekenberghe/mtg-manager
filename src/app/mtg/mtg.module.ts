@@ -3,25 +3,47 @@ import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AppMaterialModule } from '../app-material/app-material.module';
-import { SetService, CardService, ScryfallSetService, ScryfallSymbolService, ScryfallCardService, SymbolService } from './service';
-import { SetListComponent, CardDetailComponent, SetComponent, SetDetailComponent, CardDescriptionComponent } from './component';
+import {
+  SetService,
+  CardService,
+  ScryfallSetService,
+  ScryfallSymbolService,
+  ScryfallCardService,
+  SymbolService
+} from './service';
+import {
+  SetListComponent,
+  CardDetailComponent,
+  SetComponent,
+  SetDetailComponent,
+  CardDescriptionComponent,
+  SearchComponent
+} from './component';
 import { SymbolPipe } from './pipe';
 import { MtgRoutingModule } from './mtg-routing.module';
 
-
-
 @NgModule({
-  declarations: [SetListComponent, SetDetailComponent, SetComponent, CardDetailComponent, SymbolPipe, CardDescriptionComponent],
+  declarations: [
+    SetListComponent,
+    SetDetailComponent,
+    SetComponent,
+    CardDetailComponent,
+    SymbolPipe,
+    CardDescriptionComponent,
+    SearchComponent
+  ],
   imports: [
-    CommonModule, MtgRoutingModule, HttpClientModule, AppMaterialModule, ReactiveFormsModule
+    CommonModule,
+    MtgRoutingModule,
+    HttpClientModule,
+    AppMaterialModule,
+    ReactiveFormsModule
   ],
   providers: [
-    {provide: SetService, useClass: ScryfallSetService},
-    {provide: CardService, useClass: ScryfallCardService},
-    {provide: SymbolService, useClass: ScryfallSymbolService}
+    { provide: SetService, useClass: ScryfallSetService },
+    { provide: CardService, useClass: ScryfallCardService },
+    { provide: SymbolService, useClass: ScryfallSymbolService }
   ],
-  entryComponents: [
-    CardDetailComponent
-  ]
+  entryComponents: [CardDetailComponent]
 })
-export class MtgModule { }
+export class MtgModule {}

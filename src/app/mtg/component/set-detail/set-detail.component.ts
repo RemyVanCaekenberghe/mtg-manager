@@ -10,28 +10,70 @@ import {
 import { Card } from '../../model/card';
 import { CardService } from '../../service';
 import { CardDetailComponent } from '../card-detail/card-detail.component';
+import { List } from '../../model/list';
 
 @Component({
   selector: 'app-set-detail',
   templateUrl: './set-detail.component.html',
   styleUrls: ['./set-detail.component.css']
 })
-export class SetDetailComponent implements OnChanges {
+export class SetDetailComponent implements OnChanges, OnInit {
   @Input()
   public set: Set;
   public cards: Card[];
   public detailedCard: Card;
 
+  public currentPage: number;
+  public nextPage: number;
+  public previousPage: number;
+
   constructor(private cardService: CardService, public dialog: MatDialog) {}
+
+  neOnInit() {
+    this.currentPage = 0;
+    this.nextPage = 0;
+    this.previousPage = 0;
+  }
 
   ngOnChanges() {
     if (this.set != null) {
+      this.currentPage = 1;
       this.emptyCards();
 
-      this.cardService.getCardsBySet(this.set.code).subscribe((cards: Card[]) => {
-        this.cards = cards;
+      this.cardService.getCardsBySet(this.set.code, this.currentPage).subscribe((cards: List<Card>) => {
+        this.cards = cards.data;
+        this.nextPage = cards.has_more ? this.currentPage + 1 : 0;
+        this.previousPage = this.currentPage - 1;
       });
     }
+  }
+
+  public isNextPage(): boolean {
+    return this.nextPage > 0;
+  }
+
+  public getNextPage(): void {
+    this.emptyCards();
+    this.currentPage = this.nextPage;
+    this.cardService.getCardsBySet(this.set.code, this.currentPage).subscribe((cards: List<Card>) => {
+      this.cards = cards.data;
+      this.nextPage = cards.has_more ? this.currentPage + 1 : 0;
+      this.previousPage = this.currentPage - 1;
+    });
+  }
+
+  public isPreviousPage(): boolean {
+    return this.previousPage > 0;
+  }
+
+  public getPreviousPage(): void {
+    this.emptyCards();
+    this.currentPage = this.previousPage;
+    this.cardService.getCardsBySet(this.set.code, this.currentPage).subscribe((cards: List<Card>) => {
+      this.cards = cards.data;
+      this.nextPage = this.currentPage + 1;
+      this.previousPage = this.currentPage - 1;
+    });
   }
 
   public displayDetail(card: Card): void {

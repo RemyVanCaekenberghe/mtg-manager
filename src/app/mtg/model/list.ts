@@ -1,4 +1,8 @@
 export class List<T> {
 
-  constructor(public data: Array<T>) {}
+  public data: Array<T>;
+  public currentPage: number;
+  public has_more: boolean;
+
+  constructor() {}
 }

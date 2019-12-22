@@ -22,15 +22,20 @@ export class ScryfallCardService extends CardService {
       .pipe(map(response => new Card(response)), catchError(this.handleError));
   }
 
-  getCardsBySet(code: string): Observable<Card[]> {
-    return this.httpClient.get<List<Card>>(this.scryfallUrl + '/search?order=set&q=e%3A' + code)
+  getCardsBySet(code: string, page: number): Observable<List<Card>> {
+    return this.httpClient.get<List<Card>>(this.scryfallUrl + '/search?page=' + page + '&order=set&q=e%3A' + code)
       .pipe(map((response: List<Card>) => {
+        const list = new List<Card>();
         const cards = new Array<Card>();
         for (const card of response.data) {
           cards.push(new Card(card));
         }
 
-        return cards;
+        list.data = cards;
+        list.currentPage = page;
+        list.has_more = response.has_more;
+
+        return list;
       }), catchError(this.handleError));
   }
 }
