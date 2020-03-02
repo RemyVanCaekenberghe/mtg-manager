@@ -2,3 +2,14 @@
   text-align: center;
   font-size: 75%;
 }
+
+#set-cards-navigation {
+  position: fixed;
+  width: 100%;
+  background-color: white;
+  z-index: 1;
+}
+
+#cards-list-spinner {
+  margin-top: 5%;
+}

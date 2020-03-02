@@ -1,0 +1,11 @@
+#set-list {
+  margin-top: 15%
+}
+
+#set-list-filter {
+  position: fixed;
+  width: 20%;
+  height: 5%;
+  background-color: white;
+  z-index: 1;
+}

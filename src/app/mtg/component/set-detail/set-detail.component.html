@@ -1,9 +1,9 @@
-<div>
+<div id="set-cards-navigation">
   <button mat-button [disabled]="!isPreviousPage()" (click)="getPreviousPage()">Previous</button>
   <button mat-button [disabled]="!isNextPage()" (click)="getNextPage()">Next</button>
 </div>
 <div>
-  <mat-spinner *ngIf="cards == null || cards.length == 0"></mat-spinner>
+  <mat-spinner id="cards-list-spinner" *ngIf="cards == null || cards.length == 0"></mat-spinner>
 </div>
 <mat-grid-list cols="7" >
   <mat-grid-tile rowspan="2" *ngFor="let card of cards">
