@@ -7,9 +7,9 @@
 </div>
 <mat-list dense id="set-list">
   <mat-list-item *ngFor="let set of filteredSets">
-    <img style="width:15px;height:15px" [src]="set.iconSvgUri" />
-    <a [routerLink]="['/mtg/', set.code]" (click)="displaySet(set, $event)">
+    <button mat-button (click)="displaySet(set, $event)">
+      <img style="width:15px;height:15px" [src]="set.iconSvgUri" />
       {{ set.name }}
-    </a>
+    </button>
   </mat-list-item>
 </mat-list>

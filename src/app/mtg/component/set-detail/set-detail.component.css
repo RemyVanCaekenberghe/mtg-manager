@@ -10,6 +10,10 @@
   z-index: 1;
 }
 
+#set-title {
+  padding-left: 5%;
+}
+
 #cards-list-spinner {
-  margin-top: 5%;
+  margin-top: 7%;
 }

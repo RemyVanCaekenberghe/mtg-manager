@@ -31,8 +31,8 @@ export class SetDetailComponent implements OnChanges, OnInit {
   constructor(private cardService: CardService, public dialog: MatDialog) {}
 
   ngOnInit() {
-    this.currentPage = 0;
-    this.nextPage = 0;
+    this.currentPage = 1;
+    this.nextPage = 1;
     this.previousPage = 0;
   }
 
@@ -41,26 +41,18 @@ export class SetDetailComponent implements OnChanges, OnInit {
       this.currentPage = 1;
       this.emptyCards();
 
-      this.cardService.getCardsBySet(this.set.code, this.currentPage).subscribe((cards: List<Card>) => {
-        this.cards = cards.data;
-        this.nextPage = cards.has_more ? this.currentPage + 1 : 0;
-        this.previousPage = this.currentPage - 1;
-      });
+      this.cardService.getCardsBySet(this.set.code, this.currentPage).subscribe((cards: List<Card>) => this.updateCards(cards));
     }
   }
 
   public isNextPage(): boolean {
-    return this.nextPage > 0;
+    return this.nextPage > 1;
   }
 
   public getNextPage(): void {
     this.emptyCards();
     this.currentPage = this.nextPage;
-    this.cardService.getCardsBySet(this.set.code, this.currentPage).subscribe((cards: List<Card>) => {
-      this.cards = cards.data;
-      this.nextPage = cards.has_more ? this.currentPage + 1 : 0;
-      this.previousPage = this.currentPage - 1;
-    });
+    this.cardService.getCardsBySet(this.set.code, this.nextPage).subscribe((cards: List<Card>) => this.updateCards(cards));
   }
 
   public isPreviousPage(): boolean {
@@ -70,11 +62,7 @@ export class SetDetailComponent implements OnChanges, OnInit {
   public getPreviousPage(): void {
     this.emptyCards();
     this.currentPage = this.previousPage;
-    this.cardService.getCardsBySet(this.set.code, this.currentPage).subscribe((cards: List<Card>) => {
-      this.cards = cards.data;
-      this.nextPage = this.currentPage + 1;
-      this.previousPage = this.currentPage - 1;
-    });
+    this.cardService.getCardsBySet(this.set.code, this.currentPage).subscribe((cards: List<Card>) => this.updateCards(cards));
   }
 
   public displayDetail(card: Card): void {
@@ -88,5 +76,11 @@ export class SetDetailComponent implements OnChanges, OnInit {
     if (this.cards != null) {
       this.cards.splice(0, this.cards.length);
     }
+  }
+
+  private updateCards(cards: List<Card>): void {
+      this.cards = cards.data;
+      this.nextPage = cards.has_more ? this.currentPage + 1 : 1;
+      this.previousPage = this.currentPage - 1;
   }
 }
