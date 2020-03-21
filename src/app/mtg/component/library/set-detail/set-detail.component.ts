@@ -1,17 +1,10 @@
 import { MatDialog } from '@angular/material/dialog';
-import { Set } from '../../model/set';
-import {
-  Component,
-  Input,
-  Output,
-  EventEmitter,
-  OnChanges,
-  OnInit
-} from '@angular/core';
-import { Card } from '../../model/card';
-import { CardService } from '../../service';
-import { CardDetailComponent } from '../card-detail/card-detail.component';
-import { List } from '../../model/list';
+import { Component, Input, OnChanges, OnInit } from '@angular/core';
+import { Set } from 'src/app/mtg/model/set';
+import { Card } from 'src/app/mtg/model/card';
+import { CardService } from 'src/app/mtg/service';
+import { List } from 'src/app/mtg/model/list';
+import { CardDetailComponent } from 'src/app/mtg/component/card/card-detail/card-detail.component';
 
 @Component({
   selector: 'app-set-detail',
@@ -41,7 +34,9 @@ export class SetDetailComponent implements OnChanges, OnInit {
       this.currentPage = 1;
       this.emptyCards();
 
-      this.cardService.getCardsBySet(this.set.code, this.currentPage).subscribe((cards: List<Card>) => this.updateCards(cards));
+      this.cardService
+        .getCardsBySet(this.set.code, this.currentPage)
+        .subscribe((cards: List<Card>) => this.updateCards(cards));
     }
   }
 
@@ -52,7 +47,9 @@ export class SetDetailComponent implements OnChanges, OnInit {
   public getNextPage(): void {
     this.emptyCards();
     this.currentPage = this.nextPage;
-    this.cardService.getCardsBySet(this.set.code, this.nextPage).subscribe((cards: List<Card>) => this.updateCards(cards));
+    this.cardService
+      .getCardsBySet(this.set.code, this.nextPage)
+      .subscribe((cards: List<Card>) => this.updateCards(cards));
   }
 
   public isPreviousPage(): boolean {
@@ -62,7 +59,9 @@ export class SetDetailComponent implements OnChanges, OnInit {
   public getPreviousPage(): void {
     this.emptyCards();
     this.currentPage = this.previousPage;
-    this.cardService.getCardsBySet(this.set.code, this.currentPage).subscribe((cards: List<Card>) => this.updateCards(cards));
+    this.cardService
+      .getCardsBySet(this.set.code, this.currentPage)
+      .subscribe((cards: List<Card>) => this.updateCards(cards));
   }
 
   public displayDetail(card: Card): void {
@@ -79,8 +78,8 @@ export class SetDetailComponent implements OnChanges, OnInit {
   }
 
   private updateCards(cards: List<Card>): void {
-      this.cards = cards.data;
-      this.nextPage = cards.has_more ? this.currentPage + 1 : 1;
-      this.previousPage = this.currentPage - 1;
+    this.cards = cards.data;
+    this.nextPage = cards.has_more ? this.currentPage + 1 : 1;
+    this.previousPage = this.currentPage - 1;
   }
 }

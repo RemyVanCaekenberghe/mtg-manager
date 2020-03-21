@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Set } from '../../model/set';
-import { SetService } from '../../service';
-import { SymbolService } from '../../service/symbol/symbol.service';
+import { Set } from '../../../model/set';
+import { SetService } from '../../../service';
+import { SymbolService } from '../../../service/symbol/symbol.service';
 
 @Component({
   selector: 'app-set',

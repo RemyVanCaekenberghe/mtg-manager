@@ -1,6 +1,6 @@
-import { Legality } from './../../model/legality';
+import { Legality } from '../../../model/legality';
 import { Component, OnInit, Input, Inject, AfterViewInit } from '@angular/core';
-import { Card } from '../../model/card';
+import { Card } from '../../../model/card';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 
 @Component({
