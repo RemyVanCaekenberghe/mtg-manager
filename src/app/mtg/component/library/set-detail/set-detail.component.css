@@ -6,14 +6,18 @@
 #set-cards-navigation {
   position: fixed;
   width: 100%;
-  background-color: white;
+  background-color: #78909C;
   z-index: 1;
 }
 
 #set-title {
   padding-left: 5%;
+  background-color: #B0BEC5;
+  margin-bottom: 0;
 }
 
 #cards-list-spinner {
-  margin-top: 7%;
+  position: fixed;
+  top: 50%;
+  left: 50%;
 }

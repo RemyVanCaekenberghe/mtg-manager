@@ -8,11 +8,14 @@ app-set-list {
   height: 100%;
   position: fixed;
   overflow-y: scroll;
+  background-color: #eceff1;
 }
 
 app-set-detail {
   width: 85%;
   height: 100%;
   float: right;
-  overflow-y: scroll;
+  overflow-y: auto;
+  overflow: initial;
+  background-color: #cfd8dc;
 }
