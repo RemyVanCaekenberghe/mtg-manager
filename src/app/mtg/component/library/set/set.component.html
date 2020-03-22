@@ -1,5 +1,5 @@
 <span>
-    <mat-spinner *ngIf="sets$ == null"></mat-spinner>
+    <mat-spinner *ngIf="sets$ == null" id="sets-list-spinner"></mat-spinner>
   <app-set-list *ngIf="sets$ != null" [sets]="sets$" [filteredSets]="sets$" (selected)="displaySelectedSet($event)"></app-set-list>
 </span>
 <span>

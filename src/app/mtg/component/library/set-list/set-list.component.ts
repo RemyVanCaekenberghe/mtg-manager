@@ -1,5 +1,5 @@
 import { Set } from '../../../model/set';
-import { Component, OnInit, Output, EventEmitter, Input } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input, ViewEncapsulation } from '@angular/core';
 import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
 
 @Component({

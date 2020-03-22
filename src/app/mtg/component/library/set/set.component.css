@@ -15,7 +15,12 @@ app-set-detail {
   width: 85%;
   height: 100%;
   float: right;
-  overflow-y: auto;
-  overflow: initial;
+  overflow-y: scroll;
   background-color: #cfd8dc;
+}
+
+#sets-list-spinner {
+  position: fixed;
+  top: 50%;
+  left: 50%;
 }

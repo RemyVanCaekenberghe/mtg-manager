@@ -8,8 +8,12 @@
 <mat-list dense id="set-list">
   <mat-list-item *ngFor="let set of filteredSets">
     <button mat-button (click)="displaySet(set, $event)">
-      <img style="width:15px;height:15px" [src]="set.iconSvgUri" />
-      {{ set.name }}
+      <span>
+        <img style="width:15px;height:15px" [src]="set.iconSvgUri" />
+      </span>    
+      <span class="set-name">
+        {{ set.name }}
+      </span>
     </button>
   </mat-list-item>
 </mat-list>

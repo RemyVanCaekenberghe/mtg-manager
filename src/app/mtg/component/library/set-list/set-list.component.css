@@ -1,20 +1,22 @@
 #set-list {
-  margin-top: 15%;
+  margin-top: 20%;
 }
 
 #set-list-filter {
   position: fixed;
-  width: 15%;
+  width: 13%;
   height: 5%;
+  padding: 0 1%;
   background-color: #ECEFF1;
   z-index: 1;
-}
-
-.mat-list-item-content {
-  padding: 0;
 }
 
 .mat-button {
   width: 100%;
   text-align: left;
+  vertical-align: middle;
+}
+
+.set-name {
+  white-space: normal;
 }
