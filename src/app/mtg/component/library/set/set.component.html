@@ -1,7 +1,10 @@
+<div>
+  <app-menu [currentPage]="page$" (pagetoLoad)="getPage($event)"></app-menu>
+</div>
 <span>
     <mat-spinner *ngIf="sets$ == null" id="sets-list-spinner"></mat-spinner>
   <app-set-list *ngIf="sets$ != null" [sets]="sets$" [filteredSets]="sets$" (selected)="displaySelectedSet($event)"></app-set-list>
 </span>
 <span>
-  <app-set-detail *ngIf="displayedSet != null" [set]="displayedSet"></app-set-detail>
+  <app-set-detail *ngIf="displayedSet != null" [set]="displayedSet" (page)="updatePagination($event)" [currentPage]="pageToLoad$"></app-set-detail>
 </span>

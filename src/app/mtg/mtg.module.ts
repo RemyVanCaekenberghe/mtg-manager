@@ -21,6 +21,7 @@ import {
 } from './component';
 import { SymbolPipe } from './pipe';
 import { MtgRoutingModule } from './mtg-routing.module';
+import { MenuComponent } from './component/library/menu/menu.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { MtgRoutingModule } from './mtg-routing.module';
     CardDetailComponent,
     SymbolPipe,
     CardDescriptionComponent,
-    SearchComponent
+    SearchComponent,
+    MenuComponent
   ],
   imports: [
     CommonModule,

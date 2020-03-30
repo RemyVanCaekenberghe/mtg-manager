@@ -1,3 +1,4 @@
+import { Page } from './../../../model/page';
 import { Component, OnInit } from '@angular/core';
 import { Set } from '../../../model/set';
 import { SetService } from '../../../service';
@@ -12,6 +13,8 @@ export class SetComponent implements OnInit {
 
   public displayedSet: Set;
   public sets$: Set[];
+  public page$: Page;
+  public pageToLoad$: number;
 
   constructor(private setService: SetService, private symbolService: SymbolService) { }
 
@@ -27,5 +30,14 @@ export class SetComponent implements OnInit {
 
   public displaySelectedSet(set: Set): void {
     this.displayedSet = set;
+    this.pageToLoad$ = 1;
+  }
+
+  public updatePagination(page: Page): void {
+    this.page$ = page;
+  }
+
+  public getPage(pageToLoad: number): void {
+    this.pageToLoad$ = pageToLoad;
   }
 }

@@ -1,8 +1,3 @@
-<div id="set-cards-navigation">
-  <button mat-button [disabled]="!isPreviousPage()" (click)="getPreviousPage()">Previous</button>
-  <button mat-button [disabled]="!isNextPage()" (click)="getNextPage()">Next</button>
-  <p id="set-title">{{set.name}}</p>
-</div>
 <div>
   <mat-spinner id="cards-list-spinner" *ngIf="cards == null || cards.length == 0"></mat-spinner>
 </div>

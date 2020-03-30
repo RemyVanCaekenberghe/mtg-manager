@@ -2,6 +2,7 @@
   box-sizing: border-box;
 }
 
+
 app-set-list {
   width: 15%;
   float: left;
@@ -15,7 +16,6 @@ app-set-detail {
   width: 85%;
   height: 100%;
   float: right;
-  overflow-y: scroll;
   background-color: #cfd8dc;
 }
 
