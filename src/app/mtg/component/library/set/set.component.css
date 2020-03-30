@@ -2,19 +2,30 @@
   box-sizing: border-box;
 }
 
+app-menu {
+  position: fixed;
+  width: 100%;
+  height: 5%;
+  top: 0;
+  background-color: #78909C;
+  z-index: 1;
+  display: block;
+}
 
 app-set-list {
   width: 15%;
   float: left;
-  height: 100%;
+  height: 95%;
   position: fixed;
   overflow-y: scroll;
   background-color: #eceff1;
+  top: 5%;
 }
 
 app-set-detail {
   width: 85%;
   height: 100%;
+  top: 5%;
   float: right;
   background-color: #cfd8dc;
 }

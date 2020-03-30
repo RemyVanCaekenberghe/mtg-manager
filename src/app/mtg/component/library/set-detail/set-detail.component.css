@@ -3,19 +3,6 @@
   font-size: 75%;
 }
 
-#set-cards-navigation {
-  position: fixed;
-  width: 100%;
-  background-color: #78909C;
-  z-index: 1;
-}
-
-#set-title {
-  padding-left: 5%;
-  background-color: #B0BEC5;
-  margin-bottom: 0;
-}
-
 #cards-list-spinner {
   position: fixed;
   top: 50%;
