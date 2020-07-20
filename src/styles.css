@@ -1,7 +1,13 @@
-html, body { height: 100%; }
+html, body {
+  height: 100%;
+  white-space: pre-line;
+}
 
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; 
-  background-color: #CFD8DC;}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+  background-color: #cfd8dc;
+}
 
 .card-detail-dialog {
   width: 40%;
@@ -16,7 +22,6 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;
   background-color: #eceff1;
 }
 
-*::-webkit-scrollbar-thumb
-{
-  background-color: #455A64;
+*::-webkit-scrollbar-thumb {
+  background-color: #455a64;
 }

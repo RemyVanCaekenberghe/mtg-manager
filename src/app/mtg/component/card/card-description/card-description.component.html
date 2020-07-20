@@ -1,11 +1,4 @@
 <div>
-  <p>
-    <span>{{ card.name }}</span>
-    <span *ngFor="let manaCost of card.getManaCosts()">
-      <img class="symbol" [src]="manaCost | symbol" />
-    </span>
-  </p>
-  <p>{{ card.typeLine }}</p>
   <span *ngFor="let text of card.getOracleTextDivided()">
     <ng-container *ngIf="!text.match(getCardSymbolIdentification()); else symbolTemplate">
       <span>{{ text }}</span>

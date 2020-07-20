@@ -1,4 +1,14 @@
-<h1 mat-dialog-title class="card-title">{{ card.name }}</h1>
+<h1 mat-dialog-title class="card-title">
+  <span>
+    {{ card.name }}
+  </span>
+  <span *ngFor="let manaCost of card.getManaCosts()">
+    <img class="symbol" [src]="manaCost | symbol" />
+  </span>
+</h1>
+<div>
+  <p class="card-type">{{ card.typeLine }}</p>
+</div>
 <div mat-dialog-content>
   <span class="card-image">
     <ng-container *ngIf="card.imageUris != null; else facesImageTemplate">
@@ -19,22 +29,22 @@
     </ng-template>
     <mat-grid-list cols="2" rowHeight="1em" [gutterSize]="'0.1em'">
       <mat-grid-tile class="legality">
-        <div [class]=card.legalities.pioneer>Standard</div>
+        <div [class]="card.legalities.pioneer">Standard</div>
       </mat-grid-tile>
       <mat-grid-tile class="legality">
-        <div [class]=card.legalities.pioneer>Pionner</div>
+        <div [class]="card.legalities.pioneer">Pionner</div>
       </mat-grid-tile>
       <mat-grid-tile class="legality">
-        <div [class]=card.legalities.modern>Modern</div>
+        <div [class]="card.legalities.modern">Modern</div>
       </mat-grid-tile>
       <mat-grid-tile class="legality">
-        <div [class]=card.legalities.legacy>Legacy</div>
+        <div [class]="card.legalities.legacy">Legacy</div>
       </mat-grid-tile>
       <mat-grid-tile class="legality">
-        <div [class]=card.legalities.commander>Commander</div>
+        <div [class]="card.legalities.commander">Commander</div>
       </mat-grid-tile>
       <mat-grid-tile class="legality">
-        <div [class]=card.legalities.brawl>Brawl</div>
+        <div [class]="card.legalities.brawl">Brawl</div>
       </mat-grid-tile>
     </mat-grid-list>
     <div>
