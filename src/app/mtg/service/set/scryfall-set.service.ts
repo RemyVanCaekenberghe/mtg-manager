@@ -24,7 +24,7 @@ export class ScryfallSetService extends SetService {
           sets.push(new Set(set));
         }
 
-        return sets;
+        return sets.filter(set => set.classic);
       }),
       catchError(this.handleError)
     );

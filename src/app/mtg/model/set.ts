@@ -5,6 +5,7 @@ export class Set {
   public releasedAt: Date;
   public iconSvgUri: string;
   public setType: string;
+  public classic: boolean;
 
   constructor(obj?: any) {
     this.code = obj.code;
@@ -12,5 +13,6 @@ export class Set {
     this.releasedAt = obj.released_at;
     this.iconSvgUri = obj.icon_svg_uri;
     this.setType = obj.set_type;
+    this.classic = obj.parent_set_code === undefined;
   }
 }

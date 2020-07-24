@@ -59,10 +59,6 @@
         <a [href]="card.purchaseUris.tcgPlayer" target="_blank">TcgPlayer</a
         ><span *ngIf="card.prices.usd">: {{ card.prices.usd }}$</span>
       </div>
-      <div>
-        <a [href]="card.purchaseUris.cardhoarder" target="_blank">Cardhoarder</a
-        ><span *ngIf="card.prices.tix">: {{ card.prices.tix }}tix</span>
-      </div>
     </div>
     <div>
       <span>Artist: {{ card.artist }}</span>
