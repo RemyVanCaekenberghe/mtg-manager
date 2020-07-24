@@ -1,5 +1,5 @@
 #set-list {
-  margin-top: 20%;
+  margin-top: 2.5vw;
 }
 
 #set-list-filter {
@@ -7,7 +7,7 @@
   width: 12%;
   height: 5%;
   padding: 0 1%;
-  background-color: #ECEFF1;
+  background-color: #eceff1;
   z-index: 1;
 }
 
@@ -15,9 +15,15 @@
   width: 100%;
   text-align: left;
   vertical-align: middle;
+  padding: 1%;
 }
 
 .set-name {
   white-space: normal;
   font-size: 0.6vw;
+}
+
+.set-icon {
+  width: 0.8vw;
+  height: 0.8vw;
 }

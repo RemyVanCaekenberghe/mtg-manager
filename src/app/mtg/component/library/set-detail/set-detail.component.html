@@ -1,7 +1,7 @@
 <div>
   <mat-spinner id="cards-list-spinner" *ngIf="cards == null || cards.length == 0"></mat-spinner>
 </div>
-<mat-grid-list cols="7">
+<mat-grid-list [cols]="cardsPerLine" (window:resize)="onResize($event)">
   <mat-grid-tile rowspan="2" *ngFor="let card of cards">
     <div (click)="displayDetail(card)">
       <ng-container *ngIf="card.imageUris != null; else facesTemplate">

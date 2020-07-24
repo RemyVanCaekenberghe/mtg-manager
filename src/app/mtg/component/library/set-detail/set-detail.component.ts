@@ -3,6 +3,7 @@ import {
   Component,
   Input,
   OnChanges,
+  OnInit,
   Output,
   EventEmitter
 } from '@angular/core';
@@ -18,11 +19,13 @@ import { Page } from 'src/app/mtg/model/page';
   templateUrl: './set-detail.component.html',
   styleUrls: ['./set-detail.component.css']
 })
-export class SetDetailComponent implements OnChanges {
+export class SetDetailComponent implements OnChanges, OnInit {
   @Input()
   public set: Set;
   public cards: Card[];
   public detailedCard: Card;
+
+  public cardsPerLine: number;
 
   @Input()
   public currentPage: number;
@@ -31,6 +34,10 @@ export class SetDetailComponent implements OnChanges {
   public page = new EventEmitter<Page>();
 
   constructor(private cardService: CardService, public dialog: MatDialog) {}
+
+  ngOnInit(): void {
+    this.setCardsPerLine();
+  }
 
   ngOnChanges() {
     if (this.set != null) {
@@ -57,11 +64,19 @@ export class SetDetailComponent implements OnChanges {
     });
   }
 
+  public onResize(event): void {
+    this.setCardsPerLine();
+  }
+
   private emptyCards(): void {
     this.cards = null;
   }
 
   private updateCards(cards: List<Card>): void {
     this.cards = cards.data;
+  }
+
+  private setCardsPerLine(): void {
+    this.cardsPerLine = (window.innerWidth / 250);
   }
 }

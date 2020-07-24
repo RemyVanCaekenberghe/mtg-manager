@@ -9,7 +9,7 @@
   <mat-list-item *ngFor="let set of filteredSets">
     <button mat-button (click)="displaySet(set, $event)">
       <span>
-        <img style="width:15px;height:15px" [src]="set.iconSvgUri" />
+        <img class="set-icon" [src]="set.iconSvgUri" />
       </span>    
       <span class="set-name">
         {{ set.name }}
