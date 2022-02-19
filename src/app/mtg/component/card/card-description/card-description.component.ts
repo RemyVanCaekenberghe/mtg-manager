@@ -4,7 +4,7 @@ import { Card } from '../../../model/card';
 @Component({
   selector: 'app-card-description',
   templateUrl: './card-description.component.html',
-  styleUrls: ['./card-description.component.css']
+  styleUrls: ['./card-description.component.scss']
 })
 export class CardDescriptionComponent implements OnInit {
 

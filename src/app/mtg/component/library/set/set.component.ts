@@ -7,7 +7,7 @@ import { SymbolService } from '../../../service/symbol/symbol.service';
 @Component({
   selector: 'app-set',
   templateUrl: './set.component.html',
-  styleUrls: ['./set.component.css']
+  styleUrls: ['./set.component.scss']
 })
 export class SetComponent implements OnInit {
 

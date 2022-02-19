@@ -17,7 +17,7 @@ import { Page } from 'src/app/mtg/model/page';
 @Component({
   selector: 'app-set-detail',
   templateUrl: './set-detail.component.html',
-  styleUrls: ['./set-detail.component.css']
+  styleUrls: ['./set-detail.component.scss']
 })
 export class SetDetailComponent implements OnChanges, OnInit {
   @Input()

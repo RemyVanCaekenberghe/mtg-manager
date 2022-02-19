@@ -5,7 +5,7 @@ import { FormControl, FormGroup, FormBuilder } from '@angular/forms';
 @Component({
   selector: 'app-set-list',
   templateUrl: './set-list.component.html',
-  styleUrls: ['./set-list.component.css']
+  styleUrls: ['./set-list.component.scss']
 })
 export class SetListComponent implements OnInit {
   @Output()
